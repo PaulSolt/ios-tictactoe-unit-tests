@@ -43,6 +43,49 @@ class GameBoardTests: XCTestCase {
         }
     }
     
+    // testPlacingMark
+    func testPlacingXMarkInTopLeftCorner() throws {
+        var board = GameBoard()
+        
+        // Don't really want to catch errors in a test, we want to fail
+//        do {
+//            board.place(mark: .x, on: (0, 0))
+//        } catch {
+//
+//        }
+        
+        try board.place(mark: .x, on: (0, 0))
+
+        // AssertEqual(expected, actual)
+        XCTAssertEqual(.x, board[(0, 0)])
+    }
+    
+//    func testNewMarkOnExistingMark
+//    func testNoNewMarkOnExistingMark() {
+    func testPlacingDuplicateMarkThrowsError() throws {
+        
+        var game = GameBoard()
+        try game.place(mark: .x, on: (0, 0))
+        
+        XCTAssertThrowsError(try game.place(mark: .o, on: (0, 0))) { (error) in
+            
+            // Test the error is correct errors
+            XCTAssertEqual(GameBoardError.invalidSquare, error as? GameBoardError)
+        }
+    }
+    
+    
+    // Talk about more tests
+    // * Full board
+    // * Reset board is empty
+    // * can't place another mark in the same square
+    
+    // Game logic
+    // * win conditions
+    // * Game player
+    
+    // ... what else?
+    
     
     
     
