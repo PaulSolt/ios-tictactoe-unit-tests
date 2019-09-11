@@ -80,13 +80,7 @@ class GameBoardTests: XCTestCase {
     // * Reset board is empty
     // * can't place another mark in the same square
     
-    // Game logic
-    // * win conditions
-    // * Game player
-    
-    // ... what else?
-    
-    
+   
     
     
     
