@@ -12,7 +12,7 @@ class GameViewController: UIViewController, BoardViewControllerDelegate {
     
     private enum GameState {
         case active(GameBoard.Mark) // Active player
-        case cat
+        case cat // Tie game
         case won(GameBoard.Mark) // Winning player
     }
     
@@ -63,7 +63,7 @@ class GameViewController: UIViewController, BoardViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmbedBoard" {
-            boardViewController = segue.destination as! BoardViewController
+            boardViewController = segue.destination as? BoardViewController
         }
     }
     
