@@ -132,7 +132,6 @@ class TicTacToeGameUITests: XCTestCase {
         // x o -
         // x o -
         // x - -
-        
         buttonAt(0).tap()
         buttonAt(1).tap()
         buttonAt(3).tap()

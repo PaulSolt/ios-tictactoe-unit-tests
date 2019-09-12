@@ -23,7 +23,6 @@ enum Mark: String, Equatable {
 
 struct GameBoard {
     
-    
     private enum Square: Equatable {
         case filled(Mark)
         case empty
