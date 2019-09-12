@@ -112,7 +112,6 @@ class GameAITests: XCTestCase {
         try board.place(mark: .x, on: (2, 1))
         try board.place(mark: .x, on: (1, 0))
         
-        print("HI")
         let winCondition = game(board: board, isWonBy: .x)
         
         XCTAssertFalse(winCondition)
