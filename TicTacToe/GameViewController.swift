@@ -11,9 +11,9 @@ import UIKit
 class GameViewController: UIViewController, BoardViewControllerDelegate {
     
     private enum GameState {
-        case active(GameBoard.Mark) // Active player
+        case active(Mark) // Active player
         case cat // Tie game
-        case won(GameBoard.Mark) // Winning player
+        case won(Mark) // Winning player
     }
     
     @IBAction func restartGame(_ sender: Any) {
@@ -36,7 +36,7 @@ class GameViewController: UIViewController, BoardViewControllerDelegate {
             } else if board.isFull {
                 gameState = .cat
             } else {
-                let newPlayer = player == .x ? GameBoard.Mark.o : GameBoard.Mark.x
+                let newPlayer = player == .x ? Mark.o : Mark.x
                 gameState = .active(newPlayer)
             }
         } catch {
@@ -51,11 +51,11 @@ class GameViewController: UIViewController, BoardViewControllerDelegate {
         
         switch gameState {
         case let .active(player):
-            statusLabel.text = "Player \(player.stringValue)'s turn"
+            statusLabel.text = "Player \(player.rawValue)'s turn"
         case .cat:
             statusLabel.text = "Cat's game!"
         case let .won(player):
-            statusLabel.text = "Player \(player.stringValue) won!"
+            statusLabel.text = "Player \(player.rawValue) won!"
         }
     }
     

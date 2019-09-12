@@ -14,19 +14,15 @@ enum GameBoardError: Error, Equatable {
 
 typealias Coordinate = (x: Int, y: Int)
 
+// BUG not working
+enum Mark: String, Equatable {
+    case x = "X"
+    case o = "O"
+    case empty = ""
+}
+
 struct GameBoard {
     
-    enum Mark: Equatable {
-        case x
-        case o
-        
-        var stringValue: String {
-            switch self {
-            case .x: return "X"
-            case .o: return "O"
-            }
-        }
-    }
     
     private enum Square: Equatable {
         case filled(Mark)

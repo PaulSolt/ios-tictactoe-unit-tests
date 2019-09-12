@@ -14,13 +14,13 @@ import Foundation
  x - -
  */
 
-func game(board: GameBoard, isWonBy player: GameBoard.Mark) -> Bool {
+func game(board: GameBoard, isWonBy player: Mark) -> Bool {
     
     // TODO: horizontal + diagonal
     return verticalWinCondition(board: board, player: player)
 }
 
-func verticalWinCondition(board: GameBoard, player: GameBoard.Mark) -> Bool {
+func verticalWinCondition(board: GameBoard, player: Mark) -> Bool {
 
     for x in 0 ..< 3 {
         var count = 0
