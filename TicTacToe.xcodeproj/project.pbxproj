@@ -18,6 +18,8 @@
 		BDF3E26D23295A7300E459C7 /* GameBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3E26C23295A7300E459C7 /* GameBoardTests.swift */; };
 		BDF3E26F232968C000E459C7 /* GameAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3E26E232968C000E459C7 /* GameAITests.swift */; };
 		BDF3E27F232AACBC00E459C7 /* TicTacToeGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3E27E232AACBC00E459C7 /* TicTacToeGameUITests.swift */; };
+		BDF3E282232AFEC700E459C7 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA41C602148AE13001A3F45 /* GameBoard.swift */; };
+		BDF3E283232AFEC700E459C7 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA41C662148B945001A3F45 /* GameAI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,7 +220,6 @@
 					BDF3E2612329599E00E459C7 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
-						TestTargetID = 9DA41C372148ABB4001A3F45;
 					};
 					BDF3E273232AAB5E00E459C7 = {
 						CreatedOnToolsVersion = 10.3;
@@ -292,7 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF3E26D23295A7300E459C7 /* GameBoardTests.swift in Sources */,
+				BDF3E282232AFEC700E459C7 /* GameBoard.swift in Sources */,
 				BDF3E26F232968C000E459C7 /* GameAITests.swift in Sources */,
+				BDF3E283232AFEC700E459C7 /* GameAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +495,6 @@
 		BDF3E26A2329599E00E459C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
@@ -510,14 +512,12 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
 			name = Debug;
 		};
 		BDF3E26B2329599E00E459C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
@@ -533,7 +533,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
 			name = Release;
 		};
