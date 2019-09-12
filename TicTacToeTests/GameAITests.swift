@@ -37,6 +37,7 @@ class GameAITests: XCTestCase {
     // Red, Green, Refactor (1 test at a time)
     // 1. Red = Write a failing test (compilation errors are failure)
     // 2. Green = Make the test pass (Implement method / logic so test passes)
+        // Don't write additional code, just the minimum amount to pass
     // 3. Refactor = Clean up code, rearrange, rename, add more helper functions, etc.
     
     /*
@@ -89,6 +90,32 @@ class GameAITests: XCTestCase {
         try board.place(mark: .x, on: (1, 2))
         
         XCTAssertTrue(game(board: board, isWonBy: .x))
+    }
+    
+    func testXWinCheckingVertical3() throws {
+        var board = GameBoard()
+        
+        try board.place(mark: .x, on: (2, 0))
+        try board.place(mark: .o, on: (1, 0))
+        try board.place(mark: .x, on: (2, 1))
+        try board.place(mark: .o, on: (1, 1))
+        try board.place(mark: .x, on: (2, 2))
+        
+        XCTAssertTrue(game(board: board, isWonBy: .x))
+    }
+    
+    // Retest last function: Command + Control + Option + G
+    func testXNotWinConditionVertical1and2() throws {
+        var board = GameBoard()
+        
+        try board.place(mark: .x, on: (2, 0))
+        try board.place(mark: .x, on: (2, 1))
+        try board.place(mark: .x, on: (1, 0))
+        
+        print("HI")
+        let winCondition = game(board: board, isWonBy: .x)
+        
+        XCTAssertFalse(winCondition)
     }
     
 }
