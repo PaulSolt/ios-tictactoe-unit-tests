@@ -140,5 +140,22 @@ class TicTacToeGameUITests: XCTestCase {
         
         XCTAssertEqual("Player X won!", statusLabel.label)
     }
+    
+    func testExpectation() {
+        
+        let didFinish = expectation(description: "didFinish")
+        var name = ""
+        let url = URL(string: "https://apple.com")!
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+            // take 1-2 seconds
+            didFinish.fulfill()
+            name = "Dave"
+        }.resume()
+
+        wait(for: [didFinish], timeout: 5) // sync wait
+        
+        XCTAssertEqual("Dave", name)
+    }
 }
 

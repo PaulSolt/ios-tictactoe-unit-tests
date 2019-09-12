@@ -75,6 +75,36 @@ class GameBoardTests: XCTestCase {
     }
     
     
+    class MyQueue {
+        private var data = [1, 2, 3]
+        
+        subscript(index: Int) -> Int {
+            return data[index]
+        }
+        
+        var count: Int {
+            return data.count
+        }
+    }
+    
+    func testQueue() {
+        let queue = MyQueue()
+        
+        for i in 0 ..< queue.count {
+            print(queue[i])
+        }
+        
+        //let name = "Paul"
+        //name[0] // 'subscript(_:)' is unavailable: cannot subscript String with an Int, see the documentation comment for discussion
+        var grades = [String: Int]()
+        grades["Paul"] = 75
+        print(grades["Paul"] ?? "Empty")
+        
+        
+    }
+    
+    
+    
     // Talk about more tests
     // * Full board
     // * Reset board is empty

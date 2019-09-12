@@ -16,15 +16,28 @@ class GameViewController: UIViewController, BoardViewControllerDelegate {
         case won(Mark) // Winning player
     }
     
-    @IBAction func restartGame(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        reset()
+    }
+    
+    func reset() {
         board = GameBoard()
         gameState = .active(.x)
+    }
+    
+    @IBAction func restartGame(_ sender: Any) {
+        reset()
     }
     
     // MARK: - BoardViewControllerDelegate
     
     func boardViewController(_ boardViewController: BoardViewController, markWasMadeAt coordinate: Coordinate) {
-        guard case let GameState.active(player) = gameState else {
+
+        // Can use `case` for pattern matching to extract associated value
+        // from the GameState enum
+        guard case GameState.active(let player) = gameState else {
             NSLog("Game is over")
             return
         }
